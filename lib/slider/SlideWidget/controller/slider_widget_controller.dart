@@ -7,13 +7,12 @@ class SliderWidgetController extends GetxController {
 
   late PageController pageController;
   late Rx<int> _imagePositionIndex;
-  
+
   //static BuildContext context;
 
   SliderWidgetController() {
     pageController = PageController();
     _imagePositionIndex = 0.obs;
-    
   }
 
   //double size = MediaQuery.of(scaffoldKey.currentContext!).size.width;
@@ -26,14 +25,4 @@ class SliderWidgetController extends GetxController {
   set imagePositionIndex(int value) {
     _imagePositionIndex.value = value;
   }
-
-  List<Widget> widgets = [
-    InkWell(
-        onTap: () {
-          print("tapped");
-        },
-        child: Placeholder()),
-    Placeholder(),
-    Placeholder(),
-  ];
 }
