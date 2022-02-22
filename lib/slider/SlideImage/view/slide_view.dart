@@ -33,7 +33,7 @@ class SliderImageView extends StatelessWidget {
                 pageSnapping: true,
                 itemBuilder: (context, pagePosition) {
                   return Container(
-                    margin: EdgeInsets.only(left: 1, right: 1),
+                    //margin: EdgeInsets.only(left: 1, right: 1),
                     child: Image.network(imageOptions!.images[pagePosition]),
                   );
                 }),
