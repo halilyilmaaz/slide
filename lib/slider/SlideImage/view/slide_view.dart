@@ -45,11 +45,9 @@ class SliderImageView extends StatelessWidget {
   }
 
   Widget indicators(BuildContext context, imagesLength, currentIndex) {
-    final secondController = Get.find<SliderImageController>();
-    double size = 1.0;
     return Container(
       height: sliderImagesOptions!.barHeight,
-      width: MediaQuery.of(context).size.width * size,
+      width: MediaQuery.of(context).size.width * sliderImagesOptions!.barWidth!,
       decoration: BoxDecoration(
           color: sliderImagesOptions!.barColor,
           borderRadius: BorderRadius.circular(sliderImagesOptions!.radius!)),
@@ -61,7 +59,7 @@ class SliderImageView extends StatelessWidget {
                   ? Container(
                       height: sliderImagesOptions!.barHeight! - (5.75),
                       width: MediaQuery.of(context).size.width *
-                          (size - 0.023) /
+                          (sliderImagesOptions!.barWidth! - 0.023) /
                           imageOptions!.images.length.toDouble(),
                       decoration: BoxDecoration(
                           color: sliderImagesOptions!.indicatorColor,
