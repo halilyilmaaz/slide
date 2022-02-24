@@ -4,7 +4,6 @@ import 'package:slide/slider/Options/image_options.dart';
 import 'package:slide/slider/Options/slider_images_options.dart';
 import 'package:slide/slider/SlideImage/controller/slide_controller.dart';
 
-
 class SliderImageView extends StatelessWidget {
   const SliderImageView({Key? key, this.sliderImagesOptions, this.imageOptions})
       : super(key: key);
@@ -33,7 +32,7 @@ class SliderImageView extends StatelessWidget {
                 pageSnapping: true,
                 itemBuilder: (context, pagePosition) {
                   return Container(
-                    margin: EdgeInsets.only(top: 5),
+                    margin: EdgeInsets.only(top: 5, bottom: 5),
                     child: Image.network(imageOptions!.images[pagePosition]),
                   );
                 }),
@@ -55,17 +54,16 @@ class SliderImageView extends StatelessWidget {
       child: Row(
         children: [
           AnimatedSlide(
-              child: imageOptions!.images.length != 0
-                  ? Container(
-                      height: sliderImagesOptions!.barHeight! - (5.75),
-                      width: MediaQuery.of(context).size.width *
-                          (sliderImagesOptions!.barWidth! - 0.023) /
-                          imageOptions!.images.length.toDouble(),
-                      decoration: BoxDecoration(
-                          color: sliderImagesOptions!.indicatorColor,
-                          borderRadius: BorderRadius.circular(sliderImagesOptions!.radius!)),
-                    )
-                  : SizedBox(),
+              child: Container(
+                height: sliderImagesOptions!.barHeight! - (5.75),
+                width: MediaQuery.of(context).size.width *
+                    (sliderImagesOptions!.barWidth! - 0.023) /
+                    imageOptions!.images.length.toDouble(),
+                decoration: BoxDecoration(
+                    color: sliderImagesOptions!.indicatorColor,
+                    borderRadius:
+                        BorderRadius.circular(sliderImagesOptions!.radius!)),
+              ),
               curve: Curves.fastOutSlowIn,
               offset: Offset(currentIndex.toDouble(), 0),
               duration: Duration(milliseconds: 550))
