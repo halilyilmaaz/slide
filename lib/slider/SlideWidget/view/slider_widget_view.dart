@@ -37,7 +37,7 @@ class SliderWidgetView extends StatelessWidget {
                   pageSnapping: true,
                   itemBuilder: (context, pagePosition) {
                     return Container(
-                      margin: EdgeInsets.only(top: 5, bottom: 5),
+                      margin: EdgeInsets.only(top: 15),
                       child: widgetOptions!.widgets[pagePosition],
                     );
                   }),
