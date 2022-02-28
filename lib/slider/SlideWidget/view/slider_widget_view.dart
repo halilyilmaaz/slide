@@ -61,7 +61,7 @@ class SliderWidgetView extends StatelessWidget {
               child: Container(
                 height: sliderWidgetOptions!.barHeight! - (5.75),
                 width: MediaQuery.of(context).size.width *
-                    (width - 0.023) /
+                    (width - 0.020) /
                     widgetOptions!.widgets.length.toDouble(),
                 decoration: BoxDecoration(
                     color: sliderWidgetOptions!.indicatorColor,

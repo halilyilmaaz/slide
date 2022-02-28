@@ -57,7 +57,7 @@ class SliderImageView extends StatelessWidget {
               child: Container(
                 height: sliderImagesOptions!.barHeight! - (5.75),
                 width: MediaQuery.of(context).size.width *
-                    (sliderImagesOptions!.barWidth! - 0.023) /
+                    (sliderImagesOptions!.barWidth! - 0.020) /
                     imageOptions!.images.length.toDouble(),
                 decoration: BoxDecoration(
                     color: sliderImagesOptions!.indicatorColor,
