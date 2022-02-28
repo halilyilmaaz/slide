@@ -50,10 +50,10 @@ class SliderWidgetView extends StatelessWidget {
   }
 
   Widget indicators(BuildContext context, imagesLength, currentIndex) {
-    double width =  0.945;
+    double width =  0.944;
     return Container(
       height: sliderWidgetOptions!.barHeight,
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width * 1,
       decoration: BoxDecoration(
           color: sliderWidgetOptions!.barColor,
           borderRadius: BorderRadius.circular(sliderWidgetOptions!.radius!)),
@@ -62,7 +62,7 @@ class SliderWidgetView extends StatelessWidget {
         children: [
           AnimatedSlide(
               child: Container(
-                height: sliderWidgetOptions!.barHeight! - (5.75),
+                height: sliderWidgetOptions!.barHeight! - (3.75),
                 width: MediaQuery.of(context).size.width *
                     (width - 0.020) /
                     widgetOptions!.widgets.length.toDouble(),
