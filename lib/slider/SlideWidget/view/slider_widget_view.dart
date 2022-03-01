@@ -26,8 +26,8 @@ class SliderWidgetView extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height *
                   widgetOptions!.widgetHeight!,
-              width:
-                  MediaQuery.of(context).size.width * widgetOptions!.widgetWidth!,
+              width: MediaQuery.of(context).size.width *
+                  widgetOptions!.widgetWidth!,
               child: PageView.builder(
                   controller: controller.pageController,
                   onPageChanged: (int _index) {
@@ -50,7 +50,7 @@ class SliderWidgetView extends StatelessWidget {
   }
 
   Widget indicators(BuildContext context, imagesLength, currentIndex) {
-    double width =  0.935;
+    double width = 0.935;
     return Container(
       height: sliderWidgetOptions!.barHeight,
       width: MediaQuery.of(context).size.width * 1,
@@ -74,9 +74,7 @@ class SliderWidgetView extends StatelessWidget {
                     )
                   : Container(
                       height: sliderWidgetOptions!.barHeight! - (3.75),
-                      width: MediaQuery.of(context).size.width *
-                          (width - 0.020) /
-                          widgetOptions!.widgets.length.toDouble(),
+                      width: MediaQuery.of(context).size.width * 0.05,
                       decoration: BoxDecoration(
                           color: sliderWidgetOptions!.indicatorColor,
                           borderRadius: BorderRadius.circular(
