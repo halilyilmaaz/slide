@@ -50,7 +50,7 @@ class SliderWidgetView extends StatelessWidget {
   }
 
   Widget indicators(BuildContext context, imagesLength, currentIndex) {
-    double width =  0.944;
+    double width =  0.940;
     return Container(
       height: sliderWidgetOptions!.barHeight,
       width: MediaQuery.of(context).size.width * 1,
@@ -61,16 +61,27 @@ class SliderWidgetView extends StatelessWidget {
       child: Row(
         children: [
           AnimatedSlide(
-              child: Container(
-                height: sliderWidgetOptions!.barHeight! - (3.75),
-                width: MediaQuery.of(context).size.width *
-                    (width - 0.020) /
-                    widgetOptions!.widgets.length.toDouble(),
-                decoration: BoxDecoration(
-                    color: sliderWidgetOptions!.indicatorColor,
-                    borderRadius:
-                        BorderRadius.circular(sliderWidgetOptions!.radius!)),
-              ),
+              child: widgetOptions!.widgets.length == 1
+                  ? Container(
+                      height: sliderWidgetOptions!.barHeight! - (3.75),
+                      width: MediaQuery.of(context).size.width *
+                          (width - 0.020) /
+                          widgetOptions!.widgets.length.toDouble(),
+                      decoration: BoxDecoration(
+                          color: sliderWidgetOptions!.barColor,
+                          borderRadius: BorderRadius.circular(
+                              sliderWidgetOptions!.radius!)),
+                    )
+                  : Container(
+                      height: sliderWidgetOptions!.barHeight! - (3.75),
+                      width: MediaQuery.of(context).size.width *
+                          (width - 0.020) /
+                          widgetOptions!.widgets.length.toDouble(),
+                      decoration: BoxDecoration(
+                          color: sliderWidgetOptions!.indicatorColor,
+                          borderRadius: BorderRadius.circular(
+                              sliderWidgetOptions!.radius!)),
+                    ),
               curve: Curves.fastOutSlowIn,
               offset: Offset(currentIndex.toDouble(), 0),
               duration: Duration(milliseconds: 550))

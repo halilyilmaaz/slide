@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 class SliderWidgetOptions {
   /// [Slide]
-
-  /// for list images [images]
-  
+  SliderWidgetOptions(
+      {this.radius,
+      this.barHeight,
+      this.barWidth,
+    
+      this.barColor,
+      this.indicatorColor});
 
   /// we wrote for the parent widget of the [indicator] function
   final Color? barColor;
@@ -18,11 +22,4 @@ class SliderWidgetOptions {
 
   final double? radius;
 
-  SliderWidgetOptions(
-      {this.radius,
-      this.barHeight,
-      this.barWidth,
-    
-      this.barColor,
-      this.indicatorColor});
 }
