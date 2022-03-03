@@ -51,26 +51,19 @@ class SliderWidgetView extends StatelessWidget {
 
   Widget indicators(BuildContext context, imagesLength, currentIndex) {
     double width = 0.935;
-    return Container(
-      height: sliderWidgetOptions!.barHeight,
-      width: MediaQuery.of(context).size.width * 1,
-      decoration: BoxDecoration(
-          color: sliderWidgetOptions!.barColor,
-          borderRadius: BorderRadius.circular(sliderWidgetOptions!.radius!)),
-      padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: Row(
-        children: [
-          AnimatedSlide(
-              child: widgetOptions!.widgets.length == 1
-                  ? Container(
-                      height: 0.0,
-                      width: 0.0,
-                      decoration: BoxDecoration(
-                          color: sliderWidgetOptions!.barColor,
-                          borderRadius: BorderRadius.circular(
-                              sliderWidgetOptions!.radius!)),
-                    )
-                  : Container(
+    return widgetOptions!.widgets.length == 1
+        ? Container(
+            height: sliderWidgetOptions!.barHeight,
+            width: MediaQuery.of(context).size.width * 1,
+            decoration: BoxDecoration(
+                color: sliderWidgetOptions!.barColor,
+                borderRadius:
+                    BorderRadius.circular(sliderWidgetOptions!.radius!)),
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: Row(
+              children: [
+                AnimatedSlide(
+                    child: Container(
                       height: sliderWidgetOptions!.barHeight! - (3.75),
                       width: MediaQuery.of(context).size.width *
                               (width - 0.027) /
@@ -81,11 +74,12 @@ class SliderWidgetView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                               sliderWidgetOptions!.radius!)),
                     ),
-              curve: Curves.fastOutSlowIn,
-              offset: Offset(currentIndex.toDouble(), 0),
-              duration: Duration(milliseconds: 550))
-        ],
-      ),
-    );
+                    curve: Curves.fastOutSlowIn,
+                    offset: Offset(currentIndex.toDouble(), 0),
+                    duration: Duration(milliseconds: 550))
+              ],
+            ),
+          )
+        : SizedBox();
   }
 }
