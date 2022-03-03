@@ -51,7 +51,7 @@ class SliderWidgetView extends StatelessWidget {
 
   Widget indicators(BuildContext context, imagesLength, currentIndex) {
     double width = 0.935;
-    return widgetOptions!.widgets.length == 1
+    return widgetOptions!.widgets.length != 1
         ? Container(
             height: sliderWidgetOptions!.barHeight,
             width: MediaQuery.of(context).size.width * 1,
